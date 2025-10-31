@@ -1,0 +1,73 @@
+---
+title: "CV"
+author:
+  firstname: Ryan
+  lastname: Barent
+  address: "2929 S Street Lincoln, Nebraska 68503 - (402)-318-6792 - barentrya2002@gmail.com"
+  position: "Graduate Student in Statistics"
+format: awesomecv-typst
+execute:
+  echo: false
+  warning: false
+  message: false
+brand:
+  typography: 
+    fonts:
+      - family: Roboto
+        source: google
+        weight: [100, 400, 700]
+      - family: Source Sans 3
+        source: google
+        weight: [100, 400, 700]
+        style: [normal, italic]
+    base: Source Sans 3
+  color:
+    primary: "#dc3522"
+    link: "#771822"
+  defaults: 
+    awesomecv-typst:
+      font-header: Roboto
+---
+
+```{r}
+# install.packages("typstcv", repos = "https://kazuyanagimoto.r-universe.dev")
+library(typstcv)
+```
+
+
+## Education
+
+```{r}
+#| output: asis
+educr = data.frame(title = c("Master of Statistics (In Progress)","Bachelor of Science in Biological Sciences and Data Science"),location = c("Lincoln, Nebraska", "Lincoln, Nebraska"),date = c("2025-Present", "2021-2025"),description = c("University of Nebraska-Lincoln", "University of Nebraska-Lincoln"))
+
+resume_entry(educr)
+
+```
+
+## Work Experience
+
+```{r}
+#| output: asis
+workr = data.frame(title=c("Graduate Teaching Assistant","Remote Sensing Research Assistant","Grounds Crew Team Member"),location=c("Lincoln, Nebraska","Lincoln, Nebraska","Lincoln, Nebraska"),date=c("2025-Present","2023-2025","2019-2023"), description = c("Statistics Department, University of Nebraska-Lincoln","CALMIT Laboratory, University of Nebraska-Lincoln","NuMark Golf Course"))
+resume_entry(workr)
+```
+
+## Awards
+
+```{r}
+#| output: asis
+
+awardr = data.frame(title = c("Chancellor's Scholar", "Dean's List (8 Semesters)", "Regents Scholarship"),location = c("Lincoln, Nebraska", "Lincoln, Nebraska", "Lincoln, Nebraska"),date = c("2025", "2021-2025", "2021-2015"),description = c("Graduated with a 4.0 GPA, University of Nebraska–Lincoln.","Recognized on the Dean’s List for maintaining GPA in the top of class.","Merit-based Scholarship recipient recognizing academic excellence."))
+resume_entry(awardr)
+
+```
+
+## Skills
+
+```{r}
+#| output: asis
+
+skillr = data.frame(title=c("Programming","Versatile Communication","Team Work","Critical Thinking"),description=c('R and Python',"Written, Verbal, Presentation, Listening, Interpersonal","Collaboration with team to accomplish common goals","To solve a wide variety of complex problems"))
+resume_entry(skillr)
+```

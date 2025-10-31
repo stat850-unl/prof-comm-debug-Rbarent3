@@ -2,7 +2,7 @@
 title: "Homework: Reproducibility and Professional Communication"
 execute:
   error: true
-author: "Your Name"
+author: "Ryan Barent"
 output: html_document
 
 ---
@@ -47,19 +47,31 @@ Then, using what you know about R and Python, try to debug the problem using the
 
 1. Are the question and problem description complete?
 
-> <!-- Your answer here -->
+For the most part, they describe what they are trying to do and it is straightforward, but doesn't say how the code doesn't work if there is an error message. Is would be nice to include this information.
 
 2. Is the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?
 
-> <!-- Your answer here -->
+It says there is a problem but they don't really explain what the problem is. The code is reproducible, but the user would have to define a vector of strings that would work for the function to see what is wrong
 
 3. Is the example minimal? Does it include extra code or information that is not necessary?
 
-> <!-- Your answer here -->
+Yes, it is minimal. There doesn't appear to be extra code or information
 
 4. Does the question describe any attempted solutions?
 
-> <!-- Your answer here -->
+No they don't provide any attempted solutions 
+
+```{R}
+meals = c("soup","burger")
+
+ add <- function(str) {
+      meals = append(meals, as.character(str))  
+      return(meals)
+ }
+ 
+add("chicken")
+```
+The function needed a return statement. This is also what was said in the post
 
 
 ## Function not working R
@@ -99,19 +111,22 @@ mean(z$nitrate,na.rm=TRUE)
 
 1. Are the question and problem description complete?
 
-> <!-- Your answer here -->
+Not really, it doesn't say what the code is trying to do. It is a simple function so it isn't hard to figure out though. The problem is more complete and it includes the error
 
 2. Is the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?
 
-> <!-- Your answer here -->
+There is a description of the problem but the code is not reproducible. The code loads in a data set from the users computer and that is not provided in the post. 
 
 3. Is the example minimal? Does it include extra code or information that is not necessary?
 
-> <!-- Your answer here -->
+There is some extra code that is not required for the problem. They complete the calculations outside of the function which is not really needed
 
 4. Does the question describe any attempted solutions?
 
-> <!-- Your answer here -->
+No attempted solutions other than doing the calculation without a function
+
+
+Can't fully debug the code because the data set is not provided but based on what is provided and the stack overflow responses, the z$pollutant is not correct and should be changed. 
 
 
 ## Inexplicable error when trying to export my R notebook
@@ -140,19 +155,22 @@ You can find this sample file [here](https://raw.githubusercontent.com/unl-stati
 
 1. Are the question and problem description complete?
 
-> <!-- Your answer here -->
+Yes, the question and problem description is complete. They describe where the problem occurs and when it happens with the error message. 
 
 2. Is the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?
 
-> <!-- Your answer here -->
+The code is not reproducible because they are loading local files which are not provided
 
 3. Is the example minimal? Does it include extra code or information that is not necessary?
 
-> <!-- Your answer here -->
+The example is not minimal. There is a lot of extra code that makes it challenging to identify the specific problem
 
 4. Does the question describe any attempted solutions?
 
-> <!-- Your answer here -->
+There aren't really any attemped solutions
+
+
+There is an error while trying to load dplyr and ggplot2 at the same time. Need to be loaded separately
 
 
 ## Python if elif else statement
@@ -197,19 +215,50 @@ if country == "Canada":
 
 1. Are the question and problem description complete?
 
-> <!-- Your answer here -->
+Yes the problem is described pretty well in context of the code provided
 
 2. Is the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?
 
-> <!-- Your answer here -->
+No it is not reproducible. When I run the code I get errors, but they are different than the problem described in the post
 
 3. Is the example minimal? Does it include extra code or information that is not necessary?
 
-> <!-- Your answer here -->
+Yes, it is minimal. There isn't any extra code other than the single task they are attempting to complete
 
 4. Does the question describe any attempted solutions?
 
-> <!-- Your answer here -->
+There are not any other attempted solutions for the problem
+
+
+```{python}
+total = int(input('What is the total amount for your online shopping?'))
+country = input('Shipping within the US or Canada?')
+
+total =80 #manual inputs to check statments
+country = "US"
+
+
+if country == "US":
+    if total <= 50:
+        print("Shipping Costs $6.00")
+    elif total <= 100:
+            print("Shipping Costs $9.00")
+    elif total <= 150:
+            print("Shipping Costs $12.00")
+    else:
+        print("FREE")
+
+if country == "Canada":
+    if total <= 50:
+        print("Shipping Costs $8.00")
+    elif total <= 100:
+        print("Shipping Costs $12.00")
+    elif total <= 150:
+        print("Shipping Costs $15.00")
+    else:
+        print("FREE")
+```
+There were a few errors in the code. raw_input() was not a defined function so I changed it to just input(). print statements were missing () and also the "total" variable should be compared to integers in the if statements rather than strings
 
 
 # Professional Communication

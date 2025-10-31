@@ -1,0 +1,53 @@
+---
+title: "About Me Slides"
+author: "Ryan Barent"
+format: 
+  revealjs: default
+  beamer: default
+editor: visual
+---
+
+## About Me
+
+Hello My name is Ryan Barent
+
+I am a Statistics Graduate Student at UNL
+
+![](catimage.png){width="40%" height="40%"}
+
+## Bio
+
+I was born on October 13, 2002
+
+I am from Lincoln, Nebraska and I have lived here my entire life
+
+I attended Norris HS and completed my undergraduate degree at UNL
+
+## Favorite Animal
+
+MEERKAT
+
+![](meerkat.png){width="40%" height="40%"}
+
+## Favorite Graph
+
+This is my favorite graph I have created because it is ugly
+
+```{r echo=FALSE}
+penguin = read.csv("penguins.csv")
+library(ggplot2)
+
+ggplot() +
+  geom_line(data = penguin, aes(x = X, y = bill_depth_mm, color = "Bill Depth")) +
+  geom_line(data = penguin, aes(x = X, y = flipper_length_mm, color = "Flipper Length")) +
+  labs(y = "mm", color = "Measurement") +
+  coord_polar()
+```
+
+   
+  
+
+## CV
+
+Short CV:
+<https://github.com/Rbarent3/STAT850/blob/main/CV.pdf>
